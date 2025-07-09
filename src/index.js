@@ -8,10 +8,10 @@ const item2 = items[1];
 const item3 = items[2];
 const item4 = items[3];
 
-await cartService.addItemToCart(userCart, item1);
-await cartService.addItemToCart(userCart, item2);
-await cartService.addItemToCart(userCart, item3);
-await cartService.addItemToCart(userCart, item4);
+const promiseItems = items.map(async (item) => {
+    return await cartService.addItemToCart(userCart, item);
+});
+await Promise.all(promiseItems);
 
 console.log('Welcome to your shopping cart!');
 console.log(`\nHere are the products in your cart:\n`);
