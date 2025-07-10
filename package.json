@@ -9,9 +9,12 @@
   },
   "author": "Larissa Sant'Anna",
   "description": "Simulador de carrinho de compras e wishlist com Node.js",
-  "keywords": ["nodejs", "cart", "wishlist", "javascript", "cli"],
-  "license": "ISC",
-  "dependencies": {
-    "uuid": "^11.1.0"
-  }
+  "keywords": [
+    "nodejs",
+    "cart",
+    "wishlist",
+    "javascript",
+    "cli"
+  ],
+  "license": "ISC"
 }
