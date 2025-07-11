@@ -1,7 +1,7 @@
 import itemsService from "./services/products.js";
 import cartService from "./services/cart.js";
 
-const itemsWhisListishList = itemsService.itemsWhisList;
+const itemsWhisList = itemsService.itemsWhisList;
 const itemsCart = itemsService.itemsCart;
 
 function breakLine() {
@@ -9,24 +9,26 @@ function breakLine() {
 }
 
 function wishList() {
-    if (itemsWhisListishList.length === 0) {
-        console.log('Your wish list is empty.');
-    } else {
-        itemsWhisListishList.forEach((item, index) => {
+    if (itemsWhisList.length > 0) {
+        itemsWhisList.forEach((item, index) => {
             console.log(`${index + 1}. ${item.name} - R$${item.price}`);
         });
+        return
     }
+    console.log('Your wish list is empty.');
 }
 
 function cart() {
-    if (itemsCart.length === 0) {
-        console.log('Your cart is empty.');
-    } else {
+    if (itemsCart.length > 0) {
         itemsCart.forEach((item, index) => {
             console.log(`${index + 1}. ${item.name} - R$${item.price} x ${item.quantity} = R$${item.subtotal()}`);
         });
+        return;
     }
+    console.log('Your cart is empty.');
 }
+
+await cartService.decreaseItemToCart(itemsCart, itemsCart[2], itemsCart[2].id);
 
 console.log('Welcome to your shopping cart!');
 console.log(`\nHere are the products in your wish list:\n`);

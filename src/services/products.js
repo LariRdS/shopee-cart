@@ -1,5 +1,8 @@
+import crypto from 'node:crypto';
+
 async function createItem(name, price, quantity) {
     return {
+        id: crypto.randomUUID(),
         name,
         price,
         quantity,
