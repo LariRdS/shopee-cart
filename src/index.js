@@ -28,7 +28,8 @@ function cart() {
     console.log('Your cart is empty.');
 }
 
-await cartService.decreaseItemToCart(itemsCart, itemsCart[2], itemsCart[2].id);
+await cartService.removeItem(itemsWhisList, itemsWhisList[0].id);
+await cartService.decreaseItem(itemsCart, itemsCart[2].id);
 
 console.log('Welcome to your shopping cart!');
 console.log(`\nHere are the products in your wish list:\n`);
